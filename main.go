@@ -28,4 +28,14 @@ func main() {
 		log.Fatalln(err)
 	}
 	fmt.Println(u)
+
+	u.Name = "test2"
+	u.Email = "test2@example.com"
+	u.UpdateUser()
+	u, err = models.GetUser(1)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(u)
+
 }
