@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/YuichiNAGAO/golang_todo/app/models"
 )
@@ -13,12 +14,18 @@ func main() {
 
 	fmt.Println(models.Db)
 
-	u := &models.User{}
+	// u := &models.User{}
 
-	u.Name = "test"
-	u.Email = "test@example.com"
-	u.Password = "testtest"
+	// u.Name = "test"
+	// u.Email = "test@example.com"
+	// u.Password = "testtest"
+	// fmt.Println(u)
+
+	// u.CreateUser()
+
+	u, err := models.GetUser(1)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	fmt.Println(u)
-
-	u.CreateUser()
 }
