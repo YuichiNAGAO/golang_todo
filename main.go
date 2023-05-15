@@ -23,7 +23,7 @@ func main() {
 
 	// u.CreateUser()
 
-	u, err := models.GetUser(1)
+	u, err := models.GetUser(2)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -32,7 +32,7 @@ func main() {
 	u.Name = "test2"
 	u.Email = "test2@example.com"
 	u.UpdateUser()
-	u, err = models.GetUser(1)
+	u, err = models.GetUser(2)
 	if err != nil {
 		log.Fatalln(err)
 	}
