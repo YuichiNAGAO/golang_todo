@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/YuichiNAGAO/golang_todo/app/models"
 )
@@ -23,21 +22,24 @@ func main() {
 
 	// u.CreateUser()
 
-	u, err := models.GetUser(2)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fmt.Println(u)
+	// u, err := models.GetUser(2)
+	// if err != nil {
+	// 	log.Fatalln(err)
+	// }
+	// fmt.Println(u)
 
-	u.Name = "test2"
-	u.Email = "test2@example.com"
-	u.UpdateUser()
-	u, err = models.GetUser(2)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	fmt.Println(u)
+	// u.Name = "test2"
+	// u.Email = "test2@example.com"
+	// u.UpdateUser()
+	// u, err = models.GetUser(2)
+	// if err != nil {
+	// 	log.Fatalln(err)
+	// }
+	// fmt.Println(u)
 
 	// u.DeleteUser()
+
+	u, _ := models.GetUser(2)
+	u.CreateTodo("first todo")
 
 }
