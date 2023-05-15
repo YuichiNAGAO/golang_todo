@@ -46,6 +46,8 @@ func main() {
 	// fmt.Println(t)
 
 	todos, _ := models.GetTodos()
-	fmt.Println(todos)
+	for _, v := range todos {
+		fmt.Println(v)
+	}
 
 }
