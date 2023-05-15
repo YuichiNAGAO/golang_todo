@@ -42,7 +42,10 @@ func main() {
 	// u, _ := models.GetUser(2)
 	// u.CreateTodo("first todo")
 
-	t, _ := models.GetTodo(1)
-	fmt.Println(t)
+	// t, _ := models.GetTodo(1)
+	// fmt.Println(t)
+
+	todos, _ := models.GetTodos()
+	fmt.Println(todos)
 
 }

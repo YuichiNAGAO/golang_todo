@@ -42,3 +42,24 @@ func GetTodo(id int) (todo Todo, err error) {
 
 	return todo, err
 }
+
+func GetTodos() (todos []Todo, err error) {
+	cmd := `select id, content, user_id from todos`
+	rows, err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for rows.Next() {
+		var todo Todo
+		err = rows.Scan(&todo.ID, &todo.Content, &todo.UserID)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		todos = append(todos, todo)
+	}
+
+	rows.Close()
+
+	return todos, err
+}
