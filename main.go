@@ -39,7 +39,10 @@ func main() {
 
 	// u.DeleteUser()
 
-	u, _ := models.GetUser(2)
-	u.CreateTodo("first todo")
+	// u, _ := models.GetUser(2)
+	// u.CreateTodo("first todo")
+
+	t, _ := models.GetTodo(1)
+	fmt.Println(t)
 
 }
